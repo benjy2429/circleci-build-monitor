@@ -28,7 +28,7 @@ class MonitorController < ApplicationController
     selected_projects = load_config_file
 
     xml.each do |xml_data|
-      next if selected_projects.any? &&
+      next if selected_projects && selected_projects.any? &&
               selected_projects.exclude?(xml_data[:name])
       projects << Project.new(xml_data)
     end
