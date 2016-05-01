@@ -26,11 +26,11 @@ Access the build monitor at http://localhost:3000
 
 For the app to access your projects, you must create an API token on CircleCI. The app is currently designed to use your user API token which can be generated from your [account settings](https://circleci.com/account/api).
 
-Once you have generated a token, pass it to the app in the `CIRCLECI_TOKEN` environment variable. The app will display all the projects you are watching
+Once you have generated a token, pass it to the app in the `CIRCLECI_TOKEN` environment variable. The app will display all the projects you are watching.
 
 ### Hiding Projects
 
-By default, the app will display all the projects that you are currently watching. You can specify which projects you want to display using the `config/projects.yml` file.
+You can specify which projects you want to display using the `config/projects.yml` file.
 
 Only the projects specified in this file will be displayed on the monitor, all other projects will be hidden. The projects must use the following format:
 

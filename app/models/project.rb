@@ -30,15 +30,7 @@ class Project
     activity == ACTIVITY_BUILDING
   end
 
-  def success?
-    last_build_status == STATUS_SUCCESS
-  end
-
   def time_since_last_build
-    if building?
-      'Building...'
-    else
-      time_ago_in_words(last_build_time) + ' ago'
-    end
+    building? ? 'Building...' : "#{time_ago_in_words(last_build_time)} ago"
   end
 end
