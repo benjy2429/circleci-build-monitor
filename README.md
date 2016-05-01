@@ -54,7 +54,11 @@ Run rubocop static code analyzer (with rules defined in `rubocop.yml`)
 
 `$ rubocop`
 
-Both of these tasks are required for a successful build on CircleCI. All commits pushed to the remote will trigger a new build.
+Run SASS linter (with rules defined in `scss-lint.yml`)
+
+`$ scss-lint`
+
+All three of these tasks are required for a successful build on CircleCI. All commits pushed to the remote will trigger a new build.
 
 ## Contributing
 
