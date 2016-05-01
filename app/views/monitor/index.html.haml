@@ -1,0 +1,12 @@
+.monitor
+  .title
+    CircleCI Build Monitor
+    .github= link_to image_tag('github_logo.png'), 'https://github.com/benjy2429/circleci-build-monitor', title: 'View on GitHub'
+
+  - @projects.each do |project|
+    - classes = [project.activity.downcase, project.last_build_status.downcase]
+    .projects-wrapper
+      .project{class: classes}
+        .name= project.repo
+        .build-number= "##{project.build_number}"
+        .time-ago= project.time_since_last_build

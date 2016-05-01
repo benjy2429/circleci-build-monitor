@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Projects>
+  <Project
+    name='bob/unknown-project'
+    activity='Sleeping'
+    webUrl='http://www.example.com'
+    lastBuildStatus='Unknown'
+    lastBuildLabel='1'>
+  </Project>
+</Projects>
