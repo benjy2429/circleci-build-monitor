@@ -29,7 +29,9 @@ end
 # Beautiful, DRY, well-indented, clear markup: templating haiku.
 gem 'haml'
 # A Ruby static code analyzer, based on the community Ruby style guide.
-gem 'rubocop'
+gem 'rubocop', require: false
+# Configurable tool for writing clean and consistent SCSS
+gem 'scss_lint', require: false
 # Code coverage for Ruby 1.9+ with a powerful configuration library and automatic merging of coverage across test suites
 gem 'simplecov', require: false, group: :test
 # Library for stubbing and setting expectations on HTTP requests in Ruby.

@@ -1,0 +1,15 @@
+$title-text-color: #bbb;
+$text-color: #fff;
+$text-shadow-color: rgba(0, 0, 0, .7);
+$error-color: #ed5c5c;
+
+$building-color: rgba(102, 211, 228, 1);
+$building-pulse-color: rgba(102, 211, 228, .5);
+$success-color: #42c88a;
+$failure-color: #ed5c5c;
+$unknown-color: #808080;
+
+@keyframes buildingPulse {
+  0% { background-color: $building-color; }
+  100% { background-color: $building-pulse-color; }
+}

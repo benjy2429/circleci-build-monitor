@@ -1,87 +1,88 @@
-// Place all the styles related to the monitor controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-@keyframes buildingPulse {
-    0% { background-color: rgba(102,211,228,1) }
-  100% { background-color: rgba(102,211,228,.5) }
-}
+@import 'globals';
+@import 'mixins';
 
 .monitor {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
 
-  .title {
-    color: #bbb;
-    text-align: right;
-    font-size: 20px;
-    padding: 10px 20px 5px;
+.error {
+  @include white-shadowed-text;
+  border: 2px solid $error-color;
+  border-radius: 10px;
+  font-size: 3vw;
+  margin: 50px 50px 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  color: $title-text-color;
+  font-size: 20px;
+  padding: 10px 20px 5px;
+  text-align: right;
+}
+
+.github {
+  display: inline-block;
+  margin-left: 5px;
+  opacity: .5;
+
+  img {
+    height: 16px;
+    width: 16px;
   }
 
-  .github {
-    display: inline-block;
-    margin-left: 5px;
-    opacity: 0.5;
-
-    img {
-      height: 16px;
-      width: 16px;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
+  &:hover {
+    opacity: 1;
   }
+}
 
-  .projects-wrapper {
+.projects-wrapper {
+  display: flex;
+  flex: 1;
+  margin: 0 20px 15px;
+
+  .project {
+    @include white-shadowed-text;
+    align-items: center;
+    background-color: $unknown-color;
     display: flex;
     flex: 1;
-    margin: 0 20px 15px;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
 
-    .project {
-      display: flex;
-      flex: 1;
-      align-items: center;
-      justify-content: center;
+    &.success {
+      background-color: $success-color;
+    }
 
-      padding: 10px;
-      position: relative;
-      background-color: #808080;
-      font-weight: bold;
-      color: #fff;
-      text-shadow: 0 2px 5px rgba(0,0,0,.7);
+    &.failure {
+      background-color: $failure-color;
+    }
 
-      &.success {
-        background-color: #42c88a;
-      }
+    &.building {
+      animation: buildingPulse 1.5s ease-in-out infinite alternate;
+      background-color: $building-color;
+    }
 
-      &.failure {
-        background-color: #ed5c5c;
-      }
+    .name {
+      font-size: 6vh;
+    }
 
-      &.building {
-        background-color: #66d3e4;
-        animation: buildingPulse 1.5s ease-in-out infinite alternate;
-      }
+    .build-number {
+      bottom: 10px;
+      font-size: 3vh;
+      left: 10px;
+      position: absolute;
+    }
 
-      .name {
-        font-size: 6vh;
-      }
-
-      .build-number {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        font-size: 3vh;
-      }
-
-      .time-ago {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        font-size: 3vh;
-      }
+    .time-ago {
+      bottom: 10px;
+      font-size: 3vh;
+      position: absolute;
+      right: 10px;
     }
   }
 }

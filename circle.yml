@@ -5,3 +5,4 @@ machine:
 test:
   post:
     - "bundle exec rubocop"
+    - "bundle exec scss-lint"

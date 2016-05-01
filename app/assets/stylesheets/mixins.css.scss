@@ -1,0 +1,7 @@
+@import 'globals';
+
+@mixin white-shadowed-text {
+  color: $text-color;
+  font-weight: bold;
+  text-shadow: 0 2px 5px $text-shadow-color;
+}

@@ -22,15 +22,3 @@ body {
   background-color: #333;
   font-family: sans-serif;
 }
-
-.error {
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 0 2px 5px rgba(0,0,0,.7);
-  font-size: 3vw;
-  margin: 50px 50px 0;
-  padding: 20px;
-  text-align: center;
-  border: 2px solid #ed5c5c;
-  border-radius: 10px;
-}
