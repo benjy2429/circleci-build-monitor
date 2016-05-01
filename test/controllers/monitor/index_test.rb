@@ -65,20 +65,6 @@ class MonitorControllerTest < ActionController::TestCase
     assert_select('.name', 'building-project', 'Repo name was not visible')
   end
 
-  test 'Returns an empty project list when a timeout occurs' do
-    stub_request(:get, /.*circleci.*/).to_timeout
-    stub_config
-    get :index
-    assert_select('.project', false, 'Projects is not empty')
-  end
-
-  test 'Returns an empty project list when an API error occurs' do
-    stub_request(:get, /.*circleci.*/).to_return(status: 500)
-    stub_config
-    get :index
-    assert_select('.project', false, 'Projects is not empty')
-  end
-
   test 'All projects are returned with no config file' do
     stub_test_xml('multiple_cc.xml')
     stub_config

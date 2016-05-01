@@ -3,6 +3,9 @@
     CircleCI Build Monitor
     .github= link_to image_tag('github_logo.png'), 'https://github.com/benjy2429/circleci-build-monitor', title: 'View on GitHub'
 
+  - if @error
+    .error= @error
+
   - @projects.each do |project|
     - classes = [project.activity.downcase, project.last_build_status.downcase]
     .projects-wrapper
